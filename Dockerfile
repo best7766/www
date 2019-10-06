@@ -2,7 +2,7 @@ FROM     ubuntu:trusty
 MAINTAINER "Stefan Jenkner <stefan@jenkner.org>"
 
 ENV DEBIAN_FRONTEND noninteractive
-
+ENV TERM=xterm
 RUN apt-get update
 
 RUN apt-get install -y --no-install-recommends \
@@ -15,7 +15,6 @@ RUN apt-get install -y --no-install-recommends \
         procps \
         wget \
     && apt-get clean
-
 RUN cd /tmp \
     && git clone https://github.com/scarygliders/X11RDP-o-Matic.git \
     && cd X11RDP-o-Matic \
